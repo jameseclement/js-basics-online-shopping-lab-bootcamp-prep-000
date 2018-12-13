@@ -61,6 +61,18 @@ function removeFromCart(item) {
 return "That item is not in your cart."
 }
 
+
+
 function placeOrder(cardNumber) {
-  // write your code here
+  var totalValue = 0
+  for(var i = 0; i<cart.length; i++){
+    totalValue = totalValue + cart[i].itemPrice
+  }
+  if (typeof(cardNumber) === undefined){
+  return "Sorry, we don't have a credit card on file for you."
+} else { 
+  
+  return `Your total cost is $${totalValue}, which will be charged to the card ${cardNumber}.`
+  
+}
 }
